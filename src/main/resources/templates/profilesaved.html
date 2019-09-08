@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Getting Started: Handling Form Submission</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container-fluid">
+		<h1>Show Profile</h1>
+		<p th:text="'First Name: ' + ${user.vorname}">
+		<p th:text="'Name: ' + ${user.nachname}">
+		<p th:text="'Alter: ' + ${user.alter}">
+		<p th:text="'ReceiveNewsletter: ' + ${user.receiveNewsletter}">
+</div>
+</body>
+</html>

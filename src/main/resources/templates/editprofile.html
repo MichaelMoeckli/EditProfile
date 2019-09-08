@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Profil erstellen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Edit Customer</h1>
+	 
+		<form action="#" th:action="@{/editprofile}" th:object="${user}" method="post">	
+			<table class="table">
+			    <tr>
+			      <td><label for="vorname">Vorname:</label></td>
+			      <td><input type="text" id="vorname" th:field="*{vorname}"></td>
+			      <td th:if="${#fields.hasErrors('vorname')}" th:errors="*{vorname}">vorname Error</td> 
+			    </tr>
+			    <tr>
+			      <td><label for="nachname">Name:</label></td>
+			      <td><input type="text" id="nachname" th:field="*{nachname}" /></td>
+			      <td th:if="${#fields.hasErrors('nachname')}" th:errors="*{nachname}">nachname Error</td>
+			    </tr>
+			    <tr>
+			      <td><label for="alter">Alter:</label></td>
+			      <td><input type="text" id="alter" th:field="*{alter}" /></td>
+			      <td th:if="${#fields.hasErrors('alter')}" th:errors="*{alter}">alter Error</td>
+			      
+			    </tr>
+			    <tr>
+			    <td>receiveNewsletter</td>
+			    <td>
+			    <input id="receiveNewsletter" name = "receiveNewsletter" type = "checkbox" value = "true"/><input type = "hidden" name = "_receivePaper" value = "on"/>
+			    </td>
+			    </tr>
+			</table>
+			
+			<button type="Submit" class="btn btn-success">Abschicken0</button>
+			<button type="Reset" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
